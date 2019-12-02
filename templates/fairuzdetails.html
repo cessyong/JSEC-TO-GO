@@ -1,0 +1,28 @@
+{% include "header.html" %}
+   <div class="h1" style="width:50%;margin-top:10%;margin-left:25%;text-align:center;margin-bottom:5%">Fairuz Product Details</div>>
+    <form action="/addtocart" method="POST">
+        <table style="border:none;width:0;margin-top:10%">            <tr>
+                <td style="text-transform:none;text-align:left;margin-left:-65%;pointer-events:none"><img src="/static/images/{{ fairuz["image"] }}" style="width:260px;border-radius:10px;margin-left:50%;margin-top:100px"></td>
+                <td style="text-transform:none;text-align:left;margin-left:-10%;pointer-events:none">
+                    <div class="indexname" style="width:500px;margin-top:-50px;margin-left:10%">{{fairuz["name"]}}</div><br>
+                    <div class="indexinfo" style="width:500px;margin-top:-20px;margin-left:10%">{{fairuz["description"]}}</div>
+                    <div class="indexinfo" style="margin-top:85px;margin-left:11%">
+                    P{{fairuz["price"]}}</div><br>
+                    <div id="inventory" style="margin-top:70px;margin-left:17%">{{fairuz["inventory"]}}</div>
+                </td>            
+            {% if session["user"] is defined %}
+                    <td style="text-transform:none;text-align:left;margin-left:-10%;pointer-events:none"><div class="h2" style="font-size:15px;margin-top:118px;margin-left:10%;font-style:normal">QUANTITY</div></td>
+                    <td>
+                        <input type="hidden" name="code" value="{{code}}">
+                        <input type="number" style="margin-top:118px;margin-left:16%;font-style:normal" name="quantity" min="1" step="1" pattern="\d*" value="1">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input type="submit" style="width:200px;margin-left:21.5%;margin-top:-50px" value="Add to Food Tray">
+                    </td>
+                </tr>
+            {% endif %}
+        </table>
+    </form>
+{% include "footer.html" %}

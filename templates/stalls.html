@@ -1,0 +1,16 @@
+{% include "header.html" %}
+        <table style="border:none;width:0">
+            <div class="htop" style="margin-left:42%;margin-top:100px"><caption>STALLS</caption></div>
+            {% for stall in stall_list %}
+            <tr>
+                <td style="pointer-events:none"></td>
+                <td style="pointer-events:none"><img src="/static/images/{{ stall["image"] }}"  style="height:220px;border-radius:10px;margin-left:50%;margin-top:100px"></td>
+                <td style="text-transform:none;text-align:left;margin-left:-10%"><div class="indexname" style="margin-left:10%;margin-top:20px;margin-bottom:100px;pointer-events:none">{{ stall["name"] }}</div><br><p>
+                <div class="indexinfo" style="margin-left:10%;margin-top:30px;width:650px;pointer-events:none">{{ stall["description"] }}</div><br>
+                <a href='/{{ stall["name"] }}'><input type="submit" style="margin-left:11%;margin-top:95px;" value="SEE MENU"/></a>
+                <div class="lineborder" style="margin-top:-140px"></div></td>
+            </tr>
+            {% endfor %}  
+        </table>
+        
+{% include "footer.html" %}

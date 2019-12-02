@@ -1,0 +1,479 @@
+@font-face {
+    font-family: 'Abril';
+    src: url('fonts/Abril/AbrilFatface-Regular.eot');
+    src: url('fonts/Abril/AbrilFatface-Regular.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Abril/AbrilFatface-Regular.woff2') format('woff2'),
+        url('fonts/Abril/AbrilFatface-Regular.woff') format('woff'),
+        url('fonts/Abril/AbrilFatface-Regular.ttf') format('truetype'),
+        url('fonts/Abril/AbrilFatface-Regular.svg#AbrilFatface-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'AvenirB';
+    src: url('fonts/Avenir/AvenirLTStd-Book.eot');
+    src: url('fonts/Avenir/AvenirLTStd-Book.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Avenir/AvenirLTStd-Book.woff2') format('woff2'),
+        url('fonts/Avenir/AvenirLTStd-Book.woff') format('woff'),
+        url('fonts/Avenir/AvenirLTStd-Book.ttf') format('truetype'),
+        url('fonts/Avenir/AvenirLTStd-Book.svg#AvenirLTStd-Book') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AvenirM';
+    src: url('fonts/Avenir/AvenirLTStd-Medium.eot');
+    src: url('fonts/Avenir/AvenirLTStd-Medium.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Avenir/AvenirLTStd-Medium.woff2') format('woff2'),
+        url('fonts/Avenir/AvenirLTStd-Medium.woff') format('woff'),
+        url('fonts/Avenir/AvenirLTStd-Medium.ttf') format('truetype'),
+        url('fonts/Avenir/AvenirLTStd-Medium.svg#AvenirLTStd-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AvenirR';
+    src: url('fonts/Avenir/AvenirLTStd-Roman.eot');
+    src: url('fonts/Avenir/AvenirLTStd-Roman.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Avenir/AvenirLTStd-Roman.woff2') format('woff2'),
+        url('fonts/Avenir/AvenirLTStd-Roman.woff') format('woff'),
+        url('fonts/Avenir/AvenirLTStd-Roman.ttf') format('truetype'),
+        url('fonts/Avenir/AvenirLTStd-Roman.svg#AvenirLTStd-Roman') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    min-height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow: scroll;
+}
+
+img.logo > .navbar a {
+    background-image: url("static/images/j2glogo.png");
+    z-index: 999;
+    position: fixed;
+    left: 2.64%;
+    right: 90.28%;
+    top: 13.33%;
+    bottom: 11.67%;
+    height: 60px;
+    width: 180px;
+    padding-left: 50px;
+    float: left;
+}
+
+.navbar {
+    z-index: 3;
+    overflow: hidden;
+    background-color: #692880;
+    transition: all 0.2s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.navbar a {
+    float: right;
+    display: block;
+    padding: 14px 18px;
+    transition: all 0.2s;
+    text-decoration: none;
+    font-family: 'AvenirR';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 27px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.navbar a:hover {
+  background: #ffffff;
+  color: #692880;
+}
+
+.h1 {
+    position: absolute;
+    width:100%;
+    height: 67px;
+    font-family: 'Abril';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 50px;
+    line-height: 67px;
+    color: #000000;
+}
+
+.h2 {
+    position: absolute;
+    font-family: 'AvenirR';
+    font-style: italic;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 33px;
+    color: #000000;
+}
+
+.h3 {
+    font-family: 'AvenirB';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 25px;
+}
+
+.htop {
+    position: absolute;
+    width: 207px;
+    height: 30px;
+    font-family: 'AvenirB';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 82px;
+    text-align: center;
+}
+
+fieldset {
+    border:none;
+}
+
+.lineborder {
+    margin-left: 0%; 
+    position: absolute;
+    width: 50%;
+    height: 0px;
+    border: 1px solid #692880;
+}
+
+input[type=text] {
+    height: 35px;
+    width: 20%;
+    position: absolute;
+    background: white;
+    border-radius: 4px;
+    color: black;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-color: #692880;
+    display: inline-block;
+    text-align: center;
+    transition: all 0.2s;
+    padding:0.35em 1.2em;
+    border:0.5px solid #692880;
+    font-family: 'AvenirB';
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+
+input[type=submit] {
+    height: 25px;
+    width: 120px;
+    position: absolute;
+    background: #692880;
+    border-radius: 5px;
+    color: white;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-color: #692880;
+    display: inline-block;
+    box-sizing; border-box;
+    text-align: center;
+    transition: all 0.2s;
+    padding:0.35em 1.2em;
+    border:0.1em solid #692880;
+    text-transform:uppercase;
+    font-family: 'AvenirB';
+}
+
+input:hover[type=submit] {
+    height: 25px;
+    width: 120px;
+    position: absolute;
+    background: white;
+    border-radius: 5px;
+    color: #692880;
+    margin-left: 10px;
+    margin-top: 5px;
+    border-color: #692880;
+    display: inline-block;
+    box-sizing; border-box;
+    text-align: center;
+    transition: all 0.2s;
+    padding: 5px 10px;
+    border:0.1em solid #692880;
+    text-transform:uppercase;
+}
+
+input[type=button] {
+    height: 50px;
+    width: 70px;
+    position: absolute;
+    background: #692880;
+    border-radius: 5px;
+    color: white;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-color: #692880;
+    display: inline-block;
+    box-sizing; border-box;
+    text-align: center;
+    transition: all 0.2s;
+    padding:0.35em 1.2em;
+    border:0.1em solid #692880;
+    text-transform:uppercase;
+    font-family: 'AvenirB';
+    font-size: 15px;
+}
+
+input:hover[type=button] {
+    height: 50px;
+    width: 80px;
+    position: absolute;
+    background: white;
+    border-radius: 5px;
+    color: #692880;
+    margin-left: 10px;
+    margin-top: 5px;
+    border-color: #692880;
+    display: inline-block;
+    box-sizing; border-box;
+    text-align: center;
+    transition: all 0.2s;
+    padding: 5px 10px;
+    border:0.1em solid #692880;
+    text-transform:uppercase;
+}
+
+.logout {
+    height: 40px;
+    width: 70px;
+    position: absolute;
+    background: #FF5858;
+    border-radius: 5px;
+    color: white;
+    margin-left: 10px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    border-color: #FF5858;
+    display: inline-block;
+    text-align: center;
+    transition: all 0.2s;
+    padding:0.35em 1.2em;
+    border:0.1em solid #FF5858;
+    text-transform:uppercase;
+    font-family: 'AvenirB';
+    font-size: 15px;
+    justify-content: center;
+    line-height: 40px;
+}
+
+.logout:hover {
+    height: 40px;
+    width: 70px;
+    position: absolute;
+    background: white;
+    border-radius: 5px;
+    color: #FF5858;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-color: #FF5858;
+    display: inline-block;
+    box-sizing; border-box;
+    text-align: center;
+    transition: all 0.2s;
+    padding:0.35em 1.2em;
+    border:0.1em solid #FF5858;
+    text-transform:uppercase;
+    font-family: 'AvenirB';
+    font-size: 15px;
+}
+
+input[type=password] {
+    height: 35px;
+    width: 20%;
+    position: absolute;
+    background: white;
+    border-radius: 4px;
+    color: black;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-color: #692880;
+    display: inline-block;
+    box-sizing; border-box;
+    text-align: center;
+    transition: all 0.2s;
+    padding:0.35em 1.2em;
+    border:0.5px solid #692880;
+    text-transform:uppercase;
+    font-family: 'AvenirB';
+    font-size: 15px;
+}
+
+input[type=number] {
+    height: 25px;
+    width: 120px;
+    position: absolute;
+    background: white;
+    border-radius: 5px;
+    color: #692880;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-color: #692880;
+    display: inline-block;
+    box-sizing; border-box;
+    text-align: center;
+    transition: all 0.2s;
+    padding: 5px 10px;
+    border:0.1em solid #692880;
+    text-transform:uppercase;
+    font-family: 'AvenirB';
+    font-size: 12px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: 10%;
+}
+
+th { 
+    font-family: 'AvenirB';
+    text-transform:uppercase;
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+    border-bottom: 1px solid #DCCDE1;
+    color: white;
+    background: #692880;
+}
+
+td {
+    font-family: 'AvenirB';
+    text-transform:uppercase;
+  padding: 10px 10px 10px 10px;
+  text-align: center;
+  border-bottom: 1px solid #DCCDE1;
+}
+
+#inventory {
+    text-transform: uppercase;
+    font-family: 'AvenirB';
+    font-size: 12px;
+    color:#692880;
+    position: absolute;
+    height: 20px;
+    width: 100px;
+    padding-top: 5px;
+    padding-left: 10px;
+}
+
+.indexinfo {
+    position: absolute;
+    font-family: 'AvenirR';
+    font-style: italic;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    height: 20px;
+    width: 309px;
+    color: #000000;
+    padding-top: 5px;
+    padding-left: 10px;
+}
+
+.indexname {
+    position: absolute;
+    width: 109px;
+    height: 59px;
+    font-family: 'Abril';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 49px;
+    padding-left: 10px;
+}
+
+.main-container {
+    min-height: 100vh;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 100px;
+}
+
+.passchange {
+    font-family: 'AvenirB';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 25px;
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 1%;
+}
+
+.footer {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+    left: 0;
+    background: #692880;
+    margin-top: -100px;
+}
+
+.about {
+    position: absolute;
+    width: 70%;
+    height: 289px;
+    left: 15%;
+    top: 70%;
+    font-family: 'AvenirB';
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 38px;
+    color: #000000;
+    padding-bottom: 20%;
+}
+
+.footertext {
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    width: auto;
+    padding: inherit;
+    bottom: 0;
+    font-family: 'AvenirR';
+    font-style: italic;
+    font-weight: 300;
+    font-size: 15px;
+    text-align: center;
+    color: white;
+}

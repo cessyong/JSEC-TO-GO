@@ -1,0 +1,54 @@
+{% include "header.html" %}
+  <div class="h1" style="width:50%;margin-top:7%;margin-left:25%;text-align:center;margin-bottom:5%">Order Summary</div>                
+            <table style="margin-top:13%">
+                <tr>
+                    <th>Stall</th>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                </tr>
+
+                {% for item in session["cart"].values() %}
+                    <tr>
+                        <td>{{ item["stall"] }}</td>
+                        
+                        <td>{{ item["name"] }}</td>
+
+                        <td>{{ item["qty"] }}</td>
+
+                        <td>{{ item["subtotal"] }}</td>
+                    </tr> 
+                {% endfor %}
+
+                <tr>
+                    <td><b>Total</b></td>
+                    <td></td>
+                    <td></td>
+                    <td><b>{{ session["cart"].values()|sum(attribute="subtotal") }}</b></td>
+                </tr>
+            </table>
+
+        <br>
+            <form>
+               <fieldset>
+                 <div class="h2" style="text-transform:uppercase;margin-left:10%;font-style:normal">Choose delivery location</div>
+                   <div class="h3" style="margin-left:10.5%;margin-top:3%">We'll bring your meal right to you!</div>  
+                  <p>
+                     <label style="font-family:'AvenirB';font-size:15px;width:50%;margin-left:35%;text-align:center;text-transform:uppercase;margin-right:10px;margin-top:5px">Select location</label>
+                     <select id = "myList" style="font-family:'AvenirB';font-size:12;border-color:#692880;text-transform:uppercase;height:30px;padding:5px">
+                         <option value = "1">Bellarmine Hall</option>
+                         <option value = "2">Arete</option>
+                         <option value = "3">Leong Hall</option>
+                         <option value = "4">Xavier Hall</option>
+                         <option value = "5">University Dorms</option>
+                         <option value = "6">International Residence Hall</option>
+                         <option value = "7">Cervini</option>
+                         <option value = "8">Gonzaga Hall</option>
+                     </select>
+                  </p>
+               </fieldset>
+            </form>
+        <a href="/checkout"><input type="submit" style="width:80%;margin-left:10%" value="Checkout"></a>
+        <br>
+    
+{% include "footer.html" %}

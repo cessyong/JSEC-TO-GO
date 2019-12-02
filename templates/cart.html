@@ -1,0 +1,76 @@
+{% include "header.html" %}
+    <div class="h1" style="width:20%;margin-top:7%;margin-left:40%;text-align:center">Food Tray</div>
+        {% if session["cart"] is defined %}
+        
+        {% for item in session["cart"].values() %}
+            <form action="/updatecart" method="POST" id="{{ item['code'] }}"></form>
+        {% endfor %}
+
+                
+        <table style="margin-top:15%">
+            <tr><b>
+                <th>Stall</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+            </b></tr>
+            
+            {% for item in session["cart"].values() %}
+                <tr>
+                    <td>{{ item["stall"] }}</td><td>{{ item["name"] }}</td>
+                    
+                    <td colspan="1">
+                        <input type="number" style="width:100px;margin-left:-3.5%;margin-top:-12px" name="quantity" value="{{ item['qty'] }}" min="1" step="1" pattern="\d*" form="{{ item['code'] }}">
+                    </td>
+                    
+                    <td>{{ item["subtotal"] }}</td>
+                    
+                    <td><input type="hidden" name="code" value="{{ item['code'] }}" form="{{item ['code'] }}">
+                        <input type="submit" style="margin-left:-2%;margin-top:-12px;width:90px;padding:5px" name="submit" value="Update" form="{{ item['code'] }}">
+                    </td>
+                        
+                    <td>
+                        <input type="submit" style="margin-left:4%;margin-top:-12px;width:90px;padding5px"  name="submit" value="Remove" form="{{ item['code'] }}">
+                    </td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr> 
+            {% endfor %}
+            
+            <tr style="pointer-events:none">
+                <td colspan="1"><b>Total</b></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td colspan="1"><b>{{ session["cart"].values()|sum(attribute="subtotal") }}</b></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+        <br>
+        <a href="/locations"><input type="submit" style="width: 80%;margin-left:10%" value="Confirm Order"></a>
+        <br>
+
+        <br>
+        <a href="/stalls"><input type="submit" style="width: 80%;margin-left:10%" value="Back to Stalls"></a>
+        <br>
+        <br>
+
+        {% else %}
+         <div class="h2" style="width:50%;margin-top:13%;margin-left:25%;text-align:center;margin-bottom:5%;font-style: normal">Your cart is empty.</div>
+        <img src="/static/images/emptycart.png" style="margin-top:15%;width:40%;margin-left:30%">
+        <a href="/stalls"><input type="submit" style="width:40%;margin-left:-40%;margin-top:48%" value="Hungry? Click here to order a meal!"></a>
+        <br>
+        <br>
+        {% endif %}
+
+{% include "footer.html" %}
+

@@ -1,0 +1,10 @@
+{% include "header.html" %}
+    {% if session["user"] is defined %}
+    <div class="h1" style="width:50%;margin-top:20%;margin-left:45%;text-align:center;margin-bottom:5%">Hi, {{ session["user"]["first_name"] }}!</div>
+    {% endif %}
+        <div class="h2" style="width:50%;margin-top:26%;margin-left:45%;text-align:center;margin-bottom:5%;font-style: normal">What would you like to do?</div>
+        <a href='/orderhistory'><input type="button" style="margin-top:30%;width:30%;margin-left:55%" value="My Order History"></a><br>
+        <a href='/changepassword'><input type="button" style="margin-top:33%;width:30%;margin-left:55%" value="Change My Password"></a><br>
+<a href='/logout'><div class="logout" style="margin-top:36%;width:27%;margin-left:55%;text-align:center">Log Out</div></a>
+   <img src="/static/images/myaccount.png" style="margin-top:10%;width:50%;margin-left:5%">
+{% include "footer.html" %}

@@ -1,0 +1,35 @@
+{% include "header.html" %}
+    <table style="border:none;width:0">
+        <tr>
+            <td><img src="/static/images/home.png" style="z-index:-2;position:absolute;width:707px;height:505px;left:50px;top:85px"></td>
+            <td style="text-transform:none;text-align:left;margin-left:-10%">
+            <span>
+            {% if session["user"] is defined %}
+                <div class="h1" style="position:absolute;height:67px;left:652px;top:318px;">Hello, {{ session["user"]["first_name"] }}!</div><br>
+            {% else %}
+                <div class="h1" style="position:absolute;height:67px;left:652px;top:318px;">Hello!</div>
+            {% endif %}
+                <div class="h2" style="width:258px;height:66px;left:652px;top:388px;">Enjoy JSEC goodness, <br> wherever you are.</div>
+                 <img src="/static/images/indexvector.png" style="z-index:-1;position:fixed;left:666px;height:100%">
+            </span>
+            </td>
+        </tr>
+    </table>
+    <hr style="position:absolute;width:500px;height:0px;top:618.5px;border:1px solid #692880;left:50%;transform:translate(-50%, -50%);">
+
+    <div class="h2" style="width:322px;height:41px;top:677px;left:52%;font-style:normal;transform:translate(-50%, -50%);">STALLS OF THE WEEK</div>
+
+    <table style="border:none">
+   <tr>
+        {% for stall in stall_list %}
+            <td style="pointer-events:none"><img src="/static/images/{{ stall["image"] }}" height="120px" style="margin-top:750px;margin-bottom:50px;margin-left:-10%;border-radius:10px;"></td>
+            <td style="text-transform:none;text-align:left"><div class="indexname" style="top:810px;pointer-events:none;margin-left:-8%">{{ stall["name"] }}</div><br><br>
+                <div class="indexinfo" style="top:848px;pointer-events:none;margin-left:-8%">{{ stall["cuisine"] }}</div><br><br>
+                <a href='/{{ stall["name"] }}'><input type="submit" style="top:870px;bottom:100px;margin-left:-7.5%" value="SEE MENU"/></a></td>
+        {% endfor %}
+        </tr>
+    </table>
+    <br>
+        
+
+{% include "footer.html" %}
